@@ -1,0 +1,22 @@
+<!-- portfolio_list.html -->
+
+{% extends 'base.html' %}
+
+{% block content %}
+  <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
+  <div class="portfolio-list">
+    <h1>My Portfolio List</h1>
+    <ul class="portfolio-items">
+      {% for item in portfolio_list %}
+        <li class="portfolio-item">
+          <h4>{{ item.title }}</h4>
+          <p>{{ item.description }}</p>
+          <p>In GitHub: {{ item.in_github }}</p>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+  <a href="{% url 'logout' %}" class="logout-link">Logout</a>
+{% endblock %}
+
+
